@@ -108,6 +108,7 @@ $(".brush-width").on('click', function() {
 });
 
 function saveSketch(intent) {
+  $("#share").toggleClass('disabled')
   pctx.drawImage(canvas,0,0);
   var img = patternLayer.toDataURL("image/png").replace("image/png", "image/octet-stream");
   shareImage(img)
@@ -272,13 +273,15 @@ function shareImage(imageBinary) {
     "data": form
   }
   $.ajax(settings).done(function (response) {
-    console.log(response);
     var href = `https://sketch.arjun.ninja/${response}`
-    document.querySelector("#download").setAttribute('href', href)
     response = response.slice(0, -4)
+    document.querySelector("#share-link").innerHTML=""
+    var a = document.createElement("a")
+    document.querySelector("#share-link").appendChild(a)    
     var p = $("#share-link")
     p.find("a").attr('href', `./${response}`)
     p.find("a").append(href)
     p.css('display', 'block')
+    $("#share").toggleClass('disabled')
   });
 }

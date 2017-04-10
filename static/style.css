@@ -37,7 +37,7 @@
 
   .palette-colour:last-child {
     background-color: black;
-    background-image: url("https://arjun.ninja/sketch/beachball.jpg");
+    background-image: url("./beachball.jpg");
   }
   #draw {
     border: 1px solid black;
@@ -127,4 +127,8 @@ p>a {
 }
 p>a::before, p>a::after {
   content: " 😍 ";
+}
+
+.disabled {
+  pointer-events: none;
 }
