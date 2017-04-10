@@ -143,6 +143,7 @@ function changePattern(pattern) {
 
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  $("#share-link").css('display', 'none')
 }
 
 //touch events
