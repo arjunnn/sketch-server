@@ -18,7 +18,7 @@ let lastX = 0;
 let lastY = 0;
 let hue = 0;
 let direction = true;
-let isMulticolour = false;
+let isMulticolour = true;
 
 function draw(e) {
   if(!isDrawing) return;
