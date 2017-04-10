@@ -5,15 +5,14 @@ var path = require('path')
 var shortid = require('shortid')
 var http = require('http')
 var AWS = require('aws-sdk')
-AWS.config.loadFromPath('./s3_config.json')
-
-var s3 = new AWS.S3();
+var s3 = new AWS.S3()
 // var S3FS = require('s3fs')
 
 var multiparty = require('connect-multiparty')
 var multipartyMiddleware = multiparty()
 
 /*Global Variables*/
+AWS.config.loadFromPath('./s3_config.json')
 var s3 = new AWS.S3( {
     endpoint: 's3-ap-south-1.amazonaws.com',
     signatureVersion: 'v4',
@@ -101,9 +100,6 @@ app.post('/', function (req, res) {
       }
   })
 })
-
-
-
 
 
 app.listen(3000, function () {
