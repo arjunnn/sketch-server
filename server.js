@@ -52,7 +52,7 @@ app.get('/:sketch_id', function (req, res) {
                 <link rel="stylesheet" href="./static/sketch.css">
             </head>
             <body>
-                <img src="" alt="logo" class="logo">
+                <a href="https://sketch.arjun.ninja"><img src="" alt="logo" class="logo"></a>
                 <img class="sketch" src="https://s3.ap-south-1.amazonaws.com/sketch.arjun.ninja/${sketchID}" alt="Sketch">    
                 <script src="./static/sketch.js"></script>
             </body>
