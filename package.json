@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Arjun",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.4.5",
+    "aws-sdk": "^2.40.0",
+    "body-parser": "^1.17.1",
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.15.2",
+    "localtunnel": "^1.8.2",
+    "multer": "^1.3.0",
+    "node-uuid": "^1.4.8",
+    "s3fs": "^2.5.0",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>AWS SDK for JavaScript - Sample Application</title>
+
+    <!--<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>-->
+
+</head>
+
+<body>
+
+    <input type="file" id="file-chooser" />
+
+    <button id="upload-button">Upload to S3</button>
+
+    <div id="results"></div>
+
+    <!--<div id="fb-root"></div>-->
+
+    <script type="text/javascript">
+        // var appId = 'YOUR_APP_ID';
+
+        // var roleArn = 'YOUR_ROLE_ARN';
+
+        var bucketName = 'sketch.arjun.ninja';
+
+        AWS.config.region = 'ap-south-1';
+
+
+        // var fbUserId;
+
+        var bucket = new AWS.S3({
+
+            params: {
+
+                Bucket: bucketName
+
+            }
+
+        });
+
+        var fileChooser = document.getElementById('file-chooser');
+
+        var button = document.getElementById('upload-button');
+
+        var results = document.getElementById('results');
+
+        button.addEventListener('click', function () {
+
+            var file = fileChooser.files[0];
+
+            if (file) {
+
+                results.innerHTML = '';
+
+                //Object key will be facebook-USERID#/FILE_NAME
+
+                var objKey = 'sddsd' + '/' + file.name;
+
+                var params = {
+
+                    Key: objKey,
+
+                    ContentType: file.type,
+
+                    Body: file,
+
+                    ACL: 'public-read'
+
+                };
+
+                bucket.putObject(params, function (err, data) {
+
+                    if (err) {
+
+                        results.innerHTML = 'ERROR: ' + err;
+
+                    } else {
+
+                        listObjs();
+
+                    }
+
+                });
+
+            } else {
+
+                results.innerHTML = 'Nothing to upload.';
+
+            }
+
+        }, false);
+
+
+        /*!
+
+         * Login to your application using Facebook.
+
+         * Uses the Facebook SDK for JavaScript available here:
+
+         * https://developers.facebook.com/docs/javascript/gettingstarted/
+
+         */
+
+
+         // Load the Facebook SDK asynchronously
+    </script>
+    <!--<script type="text/javascript">
+        AWS.config.accessKeyId = 'AKIAIFL4ZHAOK54PZ5VQ';
+        AWS.config.secretAccessKey = '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';
+        AWS.config.region = 'ap-south-1';
+
+        // create the AWS.Request object
+        var s3 = new AWS.S3();
+        var sketch_id = 'sketch.png'
+        var params = {
+            Bucket: 'sketch.arjun.ninja',
+            Key: sketch_id,
+            ResponseContentType: 'image',
+            ResponseContentEncoding: 'base64'
+        }
+        s3.getObject(params, function(err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else     console.log(data);
+            console.log(encodeURI(atob(data.Body)))          // successful response;
+        });
+    </script>-->
+    <script>    
+        
+    </script>
+    <p id="status"></p>
+    <ul id="objects"></ul>
+    <!--<img src="https://s3.ap-south-1.amazonaws.com/sketch.arjun.ninja/B1Qrj9dal.png" alt="">-->
+    <img src="https://s3.ap-south-1.amazonaws.com/sketch.arjun.ninja/B1EGka_px.png" alt="">
+</body>
+
+</html>

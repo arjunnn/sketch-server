@@ -1,0 +1,130 @@
+  html, body {
+    margin:0;
+    /*background-color: #004C3F;*/
+    font-family: monospace;
+  }
+  .controls-container {
+    background-color: lightcoral;
+    padding-bottom: 5px;
+    width: 100vw;
+    text-align: center;
+  }
+  button {
+    border: none;
+  }
+
+  #palette {
+        position: relative;
+        margin-bottom: 0;
+        display: inline-block;
+  }
+  ul {
+    padding-left: 30px;
+  }
+  ul > li {
+      display: inline-block;
+  }
+
+  .palette-colour {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      /*border: 3px solid black;*/
+      
+      margin: 5px;
+      cursor: pointer;
+  }
+
+  .palette-colour:last-child {
+    background-color: black;
+    background-image: url("https:arjun.ninja/sketch/beachball.jpg");
+  }
+  #draw {
+    border: 1px solid black;
+    cursor: crosshair;
+  }
+
+  .brush-width {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid black;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .outer {
+    background-color: white;
+    position: relative;
+  }
+
+  .inner {
+    background-color: black;
+    position: relative;
+    border-radius: 50%;
+    -webkit-transition: all 300ms, -webkit-transform 300ms ease-in-out;
+    transition: all 300ms, transform 300ms ease-in-out;
+  }
+.action {
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  background-color: white;
+  text-transform: uppercase;
+  font-family: monospace;
+  color: black;
+  margin-top: 25px;
+  margin-left: 10px;
+  vertical-align: top;
+  cursor: pointer;
+}
+.action:hover {
+  color: white;
+  text-decoration: none;
+  background-color: blue;
+}
+#widthSelector {
+  display: inline-block;
+}
+
+.selected {
+  box-shadow: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
+  -webkit-transition: box-shadow 300ms, -webkit-transform 300ms ease-in-out;
+    transition: box-shadow 300ms, transform 300ms ease-in-out;
+}
+
+.pattern-dot {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAJUlEQVQoU2NkQAOtra0zq6ur05GFGemsCOQGdCvR+fR2EzFBAAAnfiIyytA0dQAAAABJRU5ErkJggg==") repeat;
+}
+
+.pattern-grid {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGUlEQVQYV2NkwAEYaSjR2to6E2Q8hh0wCQBUVwRXsJM+IgAAAABJRU5ErkJggg==") repeat;
+}
+.pattern {
+  background-color: white;
+}
+
+#patternSelector {
+  display: inline-block;
+}
+#patternSelector > li {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border: 3px solid black;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+p {
+  text-transform: capitalize;
+  font-size: 1.5em;
+}
+p>a {
+  text-transform: none;
+}
+p>a::before, p>a::after {
+  content: " 😍 ";
+}
