@@ -26,7 +26,7 @@ app.use(multipartyMiddleware)
 app.set('port', process.env.PORT || 3000);
 
 app.get('/', function(req, res) {
-  res.sendFile('static/index1.html' , { root : __dirname});
+  res.sendFile('static/index.html' , { root : __dirname});
 })
 
 app.get('/static/:file', function(req, res) {
