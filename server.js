@@ -27,7 +27,7 @@ app.use(multipartyMiddleware)
 
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/static', 'index.html'));
+  res.sendFile('static/index1.html' , { root : __dirname});
 })
 
 app.get('/static/:file', function(req, res) {
