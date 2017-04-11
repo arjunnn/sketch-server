@@ -277,12 +277,12 @@ function shareImage(imageBinary) {
   $.ajax(settings).done(function (response) {
     response = response.slice(0, -4)
     var href = `https://sketch.arjun.ninja/${response}`
-    document.querySelector("#share-link").innerHTML=""
+    $("#share-link a").remove()
     var a = document.createElement("a")
+    a.setAttribute('href', `./${response}`)
+    a.innerText = href
     document.querySelector("#share-link").appendChild(a)    
     var p = $("#share-link")
-    p.find("a").attr('href', `./${response}`)
-    p.find("a").append(href)
     p.css('display', 'block')
     $("#share").toggleClass('disabled')
   });
