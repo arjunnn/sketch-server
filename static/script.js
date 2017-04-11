@@ -275,8 +275,8 @@ function shareImage(imageBinary) {
     "data": form
   }
   $.ajax(settings).done(function (response) {
-    var href = `https://sketch.arjun.ninja/${response}`
     response = response.slice(0, -4)
+    var href = `https://sketch.arjun.ninja/${response}`
     document.querySelector("#share-link").innerHTML=""
     var a = document.createElement("a")
     document.querySelector("#share-link").appendChild(a)    
