@@ -167,7 +167,7 @@ function clearCanvas() {
     }
     ongoingTouches.push(copyTouch(touches[i]));
     ctx.beginPath();
-//     ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
+    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
     // ctx.fillStyle = color;
     ctx.fill();  
     hue++;
